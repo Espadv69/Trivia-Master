@@ -49,9 +49,9 @@ function checkAnswer(selectAnswer) {
 
   if (currentQuestionIndex < questions.length - 1) {
     currentQuestionIndex++
-    loadQuestion()
+    setTimeout(loadQuestion, 300)
   } else {
-    showFinalScore()
+    setTimeout(showFinalScore, 300)
   }
 }
 
