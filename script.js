@@ -40,6 +40,9 @@ function checkAnswer(selectAnswer) {
 
   if (selectAnswer === correctAnswer) {
     score++
+    correctSound.play()
+  } else {
+    wrongSound.play()
   }
 
   $scoreElement.textContent = `Score: ${score}`
