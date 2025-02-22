@@ -25,3 +25,5 @@ const questions = [
     answer: '1969',
   },
 ]
+
+export default questions
