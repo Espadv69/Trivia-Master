@@ -1,4 +1,6 @@
 import questions from './questions.js'
+const correctSound = new Audio('./assets/sounds/correct.wav')
+const wrongSound = new Audio('./assets/sounds/wrong.mp3')
 
 let currentQuestionIndex = 0
 let score = 0
