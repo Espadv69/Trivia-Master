@@ -14,4 +14,9 @@ const questions = [
     ],
     answer: 'Miguel de Cervantes',
   },
+  {
+    question: 'What is the largest ocean in the world?',
+    options: ['Atlantic', 'Pacific', 'Indian', 'Arctic'],
+    answer: 'Pacific',
+  },
 ]
