@@ -1,4 +1,4 @@
-import questions from './questions'
+import questions from './questions.js'
 
 let currentQuestionIndex = 0
 let score = 0
@@ -12,7 +12,7 @@ const $nextButton = document.querySelector('.next-btn')
 document.querySelector('.start-btn').addEventListener('click', startQuiz)
 
 function startQuiz() {
-  document.querySelector('start-btn').style.display = 'none'
+  document.querySelector('.start-btn').style.display = 'none'
   document.querySelector('.quiz-container').style.display = 'block'
 
   loadQuestion()
