@@ -14,4 +14,6 @@ document.querySelector('.start-btn').addEventListener('click', startQuiz)
 function startQuiz() {
   document.querySelector('start-btn').style.display = 'none'
   document.querySelector('.quiz-container').style.display = 'block'
+
+  loadQuestion() // Todo
 }
