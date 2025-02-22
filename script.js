@@ -7,7 +7,6 @@ let score = 0
 const $questionElement = document.querySelector('.question')
 const $answersElement = document.querySelector('.answers')
 const $scoreElement = document.querySelector('.score')
-const $nextButton = document.querySelector('.next-btn')
 
 document.querySelector('.start-btn').addEventListener('click', startQuiz)
 
