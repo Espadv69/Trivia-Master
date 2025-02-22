@@ -47,6 +47,12 @@ function checkAnswer(selectAnswer) {
     currentQuestionIndex++
     loadQuestion()
   } else {
-    showFinalScore() // ToDo
+    showFinalScore()
   }
+}
+
+function showFinalScore() {
+  document.querySelector('.quiz-container').style.display = 'none'
+  const finalScoreMessage = `You completed the quiz! Your final score is: ${score}`
+  alert(finalScoreMessage)
 }
