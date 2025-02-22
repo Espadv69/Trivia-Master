@@ -23,3 +23,7 @@ body {
   color: white;
   background: #121212;
 }
+
+.quiz-container {
+  display: none;
+}
