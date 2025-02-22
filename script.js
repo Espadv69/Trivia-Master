@@ -52,6 +52,8 @@ function checkAnswer(selectAnswer) {
 
 function showFinalScore() {
   document.querySelector('.quiz-container').style.display = 'none'
+  $scoreElement.style.display = 'none'
+
   const $finalScoreElement = document.querySelector('.finalScore')
   $finalScoreElement.textContent = `Your final score is ${score}`
 }
