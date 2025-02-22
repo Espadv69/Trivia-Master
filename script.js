@@ -17,3 +17,19 @@ function startQuiz() {
 
   loadQuestion() // Todo
 }
+
+function loadQuestion() {
+  const currentQuestion = questions[currentQuestionIndex]
+
+  $questionElement.textContent = currentQuestion.question
+  $answersElement.innerHTML = ''
+
+  currentQuestion.options.forEach((option) => {
+    const $button = document.createElement('button')
+    $button.textContent = option
+    $button.classList.add('answer-btn')
+
+    $button.addEventListener('click', () => checkAnswer(option))
+    $answersElement.appendChild($button)
+  })
+}
