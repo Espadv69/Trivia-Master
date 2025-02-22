@@ -15,7 +15,7 @@ function startQuiz() {
   document.querySelector('start-btn').style.display = 'none'
   document.querySelector('.quiz-container').style.display = 'block'
 
-  loadQuestion() // Todo
+  loadQuestion()
 }
 
 function loadQuestion() {
@@ -32,4 +32,21 @@ function loadQuestion() {
     $button.addEventListener('click', () => checkAnswer(option))
     $answersElement.appendChild($button)
   })
+}
+
+function checkAnswer(selectAnswer) {
+  const correctAnswer = questions[currentQuestionIndex].answer
+
+  if (selectAnswer === correctAnswer) {
+    score++
+  }
+
+  $scoreElement.textContent = `Score: ${score}`
+
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++
+    loadQuestion()
+  } else {
+    showFinalScore() // ToDo
+  }
 }
