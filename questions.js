@@ -19,4 +19,9 @@ const questions = [
     options: ['Atlantic', 'Pacific', 'Indian', 'Arctic'],
     answer: 'Pacific',
   },
+  {
+    question: 'In what year did man land on the moon?',
+    options: ['1969', '1959', '1979', '1989'],
+    answer: '1969',
+  },
 ]
