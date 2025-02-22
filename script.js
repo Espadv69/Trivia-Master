@@ -39,8 +39,8 @@ function checkAnswer(selectAnswer) {
   const correctAnswer = questions[currentQuestionIndex].answer
 
   if (selectAnswer === correctAnswer) {
-    score++
     correctSound.play()
+    score++
   } else {
     wrongSound.play()
   }
