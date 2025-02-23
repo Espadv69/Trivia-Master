@@ -49,6 +49,11 @@ const questions = [
     options: ['Nucleus', 'Ribosome', 'Mitochondria', 'Chloroplast'],
     answer: 'Mitochondria',
   },
+  {
+    question: 'Which country is famous for sushi?',
+    options: ['China', 'Korea', 'Japan', 'Vietnam'],
+    answer: 'Japan',
+  },
 ]
 
 export default questions
