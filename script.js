@@ -50,10 +50,10 @@ function loadQuestion() {
   clearTimeout(timeoutId)
 
   const categoryQuestions = questions.filter(
-    (q) => q.category === selectedCategory
+    (q) => q.category === selectedCategory,
   )
   const randomQuestionIndex = Math.floor(
-    Math.random() * categoryQuestions.length
+    Math.random() * categoryQuestions.length,
   )
   const currentQuestion = categoryQuestions[randomQuestionIndex]
 
@@ -71,7 +71,7 @@ function loadQuestion() {
     $button.classList.add('answer-btn')
 
     $button.addEventListener('click', () =>
-      checkAnswer(option, currentQuestion.answer)
+      checkAnswer(option, currentQuestion.answer),
     )
     $answersElement.appendChild($button)
   })
