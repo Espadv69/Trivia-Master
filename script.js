@@ -17,15 +17,6 @@ const $wheel = document.querySelector('.wheel')
 const $spinButton = document.querySelector('.spin-btn')
 const $wheelContainer = document.querySelector('.wheel-container')
 
-document.querySelector('.start-btn').addEventListener('click', startQuiz)
-
-function startQuiz() {
-  document.querySelector('.start-btn').style.display = 'none'
-  document.querySelector('.quiz-container').style.display = 'block'
-
-  loadQuestion()
-}
-
 function loadQuestion() {
   clearTimeout(timeoutId)
   const currentQuestion = questions[currentQuestionIndex]
