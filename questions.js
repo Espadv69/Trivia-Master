@@ -74,6 +74,11 @@ const questions = [
     ],
     answer: 'Albert Einstein',
   },
+  {
+    question: 'What is the main ingredient in guacamole?',
+    options: ['Tomato', 'Onion', 'Avocado', 'Pepper'],
+    answer: 'Avocado',
+  },
 ]
 
 export default questions
