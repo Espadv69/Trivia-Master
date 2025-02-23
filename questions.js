@@ -34,6 +34,16 @@ const questions = [
     options: ['Venus', 'Mars', 'Jupiter', 'Saturn'],
     answer: 'Mars',
   },
+  {
+    question: 'Who painted the Mona Lisa?',
+    options: [
+      'Vicent van Gogh',
+      'Leonardo da Vinci',
+      'Claude Monet',
+      'Pablo Picasso',
+    ],
+    answer: 'Leonardo da Vinci',
+  },
 ]
 
 export default questions
