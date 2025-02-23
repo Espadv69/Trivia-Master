@@ -112,7 +112,7 @@ function checkAnswer(selectAnswer) {
 
 function showFinalScore() {
   clearTimeout(timeoutId)
-  document.querySelector('.quiz-container').style.display = 'none'
+  $quizContainer.style.display = 'none'
   $scoreElement.style.display = 'none'
 
   const $finalScoreElement = document.querySelector('.finalScore')
