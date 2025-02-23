@@ -64,6 +64,16 @@ const questions = [
     options: ['5', '6', '7', '8'],
     answer: '7',
   },
+  {
+    question: 'Who developed the theory of relativity?',
+    options: [
+      'Isaac Newton',
+      'Galileo Galilei',
+      'Nikola Tesla',
+      'Albert Einstein',
+    ],
+    answer: 'Albert Einstein',
+  },
 ]
 
 export default questions
