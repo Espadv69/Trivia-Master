@@ -84,6 +84,11 @@ const questions = [
     options: ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'],
     answer: 'Carbon Dioxide',
   },
+  {
+    question: 'What is the capital of Spain?',
+    options: ['Madrid', 'Barcelona', 'Valencia', 'Seville'],
+    answer: 'Madrid',
+  },
 ]
 
 export default questions
