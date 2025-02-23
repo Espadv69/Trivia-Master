@@ -29,6 +29,11 @@ const questions = [
     options: ['Ag', 'Au', 'Pb', 'Fe'],
     answer: 'Au',
   },
+  {
+    question: 'Which planet is known as the red planet?',
+    options: ['Venus', 'Mars', 'Jupiter', 'Saturn'],
+    answer: 'Mars',
+  },
 ]
 
 export default questions
