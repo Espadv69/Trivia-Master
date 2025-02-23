@@ -44,6 +44,11 @@ const questions = [
     ],
     answer: 'Leonardo da Vinci',
   },
+  {
+    question: 'What is the powerhouse of the cell?',
+    options: ['Nucleus', 'Ribosome', 'Mitochondria', 'Chloroplast'],
+    answer: 'Mitochondria',
+  },
 ]
 
 export default questions
