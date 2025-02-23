@@ -17,6 +17,13 @@ const $wheel = document.querySelector('.wheel')
 const $spinButton = document.querySelector('.spin-btn')
 const $wheelContainer = document.querySelector('.wheel-container')
 
+$startButton.addEventListener('click', () => {
+  $startButton.style.display = 'none'
+  $wheelContainer.style.display = 'block'
+})
+
+$spinButton.addEventListener('click', spinWheel) // ToDo
+
 function loadQuestion() {
   clearTimeout(timeoutId)
   const currentQuestion = questions[currentQuestionIndex]
