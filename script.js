@@ -5,11 +5,17 @@ const wrongSound = new Audio('./assets/sounds/wrong.mp3')
 let currentQuestionIndex = 0
 let score = 0
 let timeoutId = null
+let selectedCategory = null
 
 // DOM elements
 const $questionElement = document.querySelector('.question')
 const $answersElement = document.querySelector('.answers')
 const $scoreElement = document.querySelector('.score')
+const $quizContainer = document.querySelector('.quiz-container')
+const $startButton = document.querySelector('.start-btn')
+const $wheel = document.querySelector('.wheel')
+const $spinButton = document.querySelector('.spin-btn')
+const $wheelContainer = document.querySelector('.wheel-container')
 
 document.querySelector('.start-btn').addEventListener('click', startQuiz)
 
