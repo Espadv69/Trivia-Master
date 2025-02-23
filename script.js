@@ -4,6 +4,7 @@ const wrongSound = new Audio('./assets/sounds/wrong.mp3')
 
 let currentQuestionIndex = 0
 let score = 0
+let timeoutId = null
 
 // DOM elements
 const $questionElement = document.querySelector('.question')
@@ -20,6 +21,7 @@ function startQuiz() {
 }
 
 function loadQuestion() {
+  clearTimeout(timeoutId)
   const currentQuestion = questions[currentQuestionIndex]
 
   $questionElement.textContent = currentQuestion.question
@@ -36,10 +38,11 @@ function loadQuestion() {
 }
 
 function checkAnswer(selectAnswer) {
+  clearTimeout(timeoutId)
   const correctAnswer = questions[currentQuestionIndex].answer
   const $buttons = document.querySelectorAll('.answer-btn')
 
-  $buttons.forEach(btn => {
+  $buttons.forEach((btn) => {
     if (btn.textContent === correctAnswer) {
       btn.style.backgroundColor = 'green'
       btn.style.color = 'white'
@@ -61,13 +64,14 @@ function checkAnswer(selectAnswer) {
 
   if (currentQuestionIndex < questions.length - 1) {
     currentQuestionIndex++
-    setTimeout(loadQuestion, 300)
+    timeoutId = setTimeout(loadQuestion, 300)
   } else {
-    setTimeout(showFinalScore, 300)
+    timeoutId = setTimeout(showFinalScore, 300)
   }
 }
 
 function showFinalScore() {
+  clearTimeout(timeoutId)
   document.querySelector('.quiz-container').style.display = 'none'
   $scoreElement.style.display = 'none'
 
