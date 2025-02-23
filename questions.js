@@ -24,6 +24,11 @@ const questions = [
     options: ['1969', '1959', '1979', '1989'],
     answer: '1969',
   },
+  {
+    question: 'What is the chemical symbol for gold?',
+    options: ['Ag', 'Au', 'Pb', 'Fe'],
+    answer: 'Au',
+  },
 ]
 
 export default questions
