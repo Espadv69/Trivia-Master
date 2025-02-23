@@ -34,6 +34,10 @@ function spinWheel() {
   ]
   const randomIndex = Math.floor(Math.random() * categories.length)
   selectedCategory = categories[randomIndex]
+
+  const degrees = 3600 + randomIndex * (360 / categories.length)
+  $wheel.style.transition = 'transform 3s ease-out'
+  $wheel.style.transform = `rotate(${degrees}deg)`
 }
 
 function loadQuestion() {
