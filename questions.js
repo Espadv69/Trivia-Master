@@ -59,6 +59,11 @@ const questions = [
     options: ['Amazon', 'Nile', 'Yangtze', 'Mississippi'],
     answer: 'Nile',
   },
+  {
+    question: 'How many continents are there on Earth?',
+    options: ['5', '6', '7', '8'],
+    answer: '7',
+  },
 ]
 
 export default questions
