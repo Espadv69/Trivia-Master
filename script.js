@@ -37,6 +37,18 @@ function loadQuestion() {
 
 function checkAnswer(selectAnswer) {
   const correctAnswer = questions[currentQuestionIndex].answer
+  const $buttons = document.querySelectorAll('.answer-btn')
+
+  $buttons.forEach(btn => {
+    if (btn.textContent === correctAnswer) {
+      btn.style.backgroundColor = 'green'
+      btn.style.color = 'white'
+    } else if (btn.textContent === selectAnswer) {
+      btn.style.backgroundColor = 'red'
+      btn.style.color = 'white'
+    }
+    btn.disabled = true
+  })
 
   if (selectAnswer === correctAnswer) {
     correctSound.play()
