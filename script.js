@@ -46,7 +46,17 @@ function spinWheel() {
   }, 3500)
 }
 
-function loadQuestion() {}
+function loadQuestion() {
+  clearTimeout(timeoutId)
+
+  const categoryQuestions = questions.filter(
+    (q) => q.category === selectedCategory
+  )
+  const randomQuestionIndex = Math.floor(
+    Math.random() * categoryQuestions.length
+  )
+  const currentQuestion = categoryQuestions[randomQuestionIndex]
+}
 
 function checkAnswer(selectAnswer) {
   clearTimeout(timeoutId)
