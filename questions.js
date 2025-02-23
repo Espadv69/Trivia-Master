@@ -54,6 +54,11 @@ const questions = [
     options: ['China', 'Korea', 'Japan', 'Vietnam'],
     answer: 'Japan',
   },
+  {
+    question: 'What is the longest river in the world?',
+    options: ['Amazon', 'Nile', 'Yangtze', 'Mississippi'],
+    answer: 'Nile',
+  },
 ]
 
 export default questions
