@@ -79,6 +79,11 @@ const questions = [
     options: ['Tomato', 'Onion', 'Avocado', 'Pepper'],
     answer: 'Avocado',
   },
+  {
+    question: 'Which gas do plants absorb from the atmosphere?',
+    options: ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'],
+    answer: 'Carbon Dioxide',
+  },
 ]
 
 export default questions
