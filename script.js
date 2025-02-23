@@ -77,9 +77,8 @@ function loadQuestion() {
   })
 }
 
-function checkAnswer(selectAnswer) {
+function checkAnswer(selectAnswer, correctAnswer) {
   clearTimeout(timeoutId)
-  const correctAnswer = questions[currentQuestionIndex].answer
   const $buttons = document.querySelectorAll('.answer-btn')
 
   $buttons.forEach((btn) => {
@@ -102,12 +101,7 @@ function checkAnswer(selectAnswer) {
 
   $scoreElement.textContent = `Score: ${score}`
 
-  if (currentQuestionIndex < questions.length - 1) {
-    currentQuestionIndex++
-    timeoutId = setTimeout(loadQuestion, 600)
-  } else {
-    timeoutId = setTimeout(showFinalScore, 600)
-  }
+  timeoutId = setTimeout(loadQuestion, 600)
 }
 
 function showFinalScore() {
