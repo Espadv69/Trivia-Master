@@ -64,9 +64,9 @@ function checkAnswer(selectAnswer) {
 
   if (currentQuestionIndex < questions.length - 1) {
     currentQuestionIndex++
-    timeoutId = setTimeout(loadQuestion, 300)
+    timeoutId = setTimeout(loadQuestion, 600)
   } else {
-    timeoutId = setTimeout(showFinalScore, 300)
+    timeoutId = setTimeout(showFinalScore, 600)
   }
 }
 
