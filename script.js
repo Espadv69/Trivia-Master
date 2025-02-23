@@ -46,22 +46,7 @@ function spinWheel() {
   }, 3500)
 }
 
-function loadQuestion() {
-  clearTimeout(timeoutId)
-  const currentQuestion = questions[currentQuestionIndex]
-
-  $questionElement.textContent = currentQuestion.question
-  $answersElement.innerHTML = ''
-
-  currentQuestion.options.forEach((option) => {
-    const $button = document.createElement('button')
-    $button.textContent = option
-    $button.classList.add('answer-btn')
-
-    $button.addEventListener('click', () => checkAnswer(option))
-    $answersElement.appendChild($button)
-  })
-}
+function loadQuestion() {}
 
 function checkAnswer(selectAnswer) {
   clearTimeout(timeoutId)
