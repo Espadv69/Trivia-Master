@@ -22,7 +22,19 @@ $startButton.addEventListener('click', () => {
   $wheelContainer.style.display = 'block'
 })
 
-$spinButton.addEventListener('click', spinWheel) // ToDo
+$spinButton.addEventListener('click', spinWheel)
+
+function spinWheel() {
+  const categories = [
+    'Geography',
+    'History',
+    'Science',
+    'Entertainment',
+    'Sports',
+  ]
+  const randomIndex = Math.floor(Math.random() * categories.length)
+  selectedCategory = categories[randomIndex]
+}
 
 function loadQuestion() {
   clearTimeout(timeoutId)
