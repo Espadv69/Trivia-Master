@@ -64,6 +64,17 @@ function loadQuestion() {
 
   $questionElement.textContent = currentQuestion.question
   $answersElement.innerHTML = ''
+
+  currentQuestion.options.forEach((option) => {
+    const $button = document.createElement('button')
+    $button.textContent = option
+    $button.classList.add('answer-btn')
+
+    $button.addEventListener('click', () =>
+      checkAnswer(option, currentQuestion.answer)
+    )
+    $answersElement.appendChild($button)
+  })
 }
 
 function checkAnswer(selectAnswer) {
