@@ -56,6 +56,14 @@ function loadQuestion() {
     Math.random() * categoryQuestions.length
   )
   const currentQuestion = categoryQuestions[randomQuestionIndex]
+
+  if (!currentQuestion) {
+    showFinalScore()
+    return
+  }
+
+  $questionElement.textContent = currentQuestion.question
+  $answersElement.innerHTML = ''
 }
 
 function checkAnswer(selectAnswer) {
