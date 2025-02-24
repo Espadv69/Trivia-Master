@@ -5,62 +5,24 @@ const wrongSound = new Audio('./assets/sounds/wrong.mp3')
 let currentQuestionIndex = 0
 let score = 0
 let timeoutId = null
-let selectedCategory = null
 
 // DOM elements
 const $questionElement = document.querySelector('.question')
 const $answersElement = document.querySelector('.answers')
 const $scoreElement = document.querySelector('.score')
-const $quizContainer = document.querySelector('.quiz-container')
-const $startButton = document.querySelector('.start-btn')
-const $wheel = document.querySelector('.wheel')
-const $spinButton = document.querySelector('.spin-btn')
-const $wheelContainer = document.querySelector('.wheel-container')
 
-$startButton.addEventListener('click', () => {
-  $startButton.style.display = 'none'
-  $wheelContainer.style.display = 'block'
-})
+document.querySelector('.start-btn').addEventListener('click', startQuiz)
 
-$spinButton.addEventListener('click', spinWheel)
+function startQuiz() {
+  document.querySelector('.start-btn').style.display = 'none'
+  document.querySelector('.quiz-container').style.display = 'block'
 
-function spinWheel() {
-  const categories = [
-    'Geography',
-    'History',
-    'Science',
-    'Entertainment',
-    'Sports',
-  ]
-  const randomIndex = Math.floor(Math.random() * categories.length)
-  selectedCategory = categories[randomIndex]
-
-  const degrees = 3600 + randomIndex * (360 / categories.length)
-  $wheel.style.transition = 'transform 3s ease-out'
-  $wheel.style.transform = `rotate(${degrees}deg)`
-
-  setTimeout(() => {
-    $wheelContainer.style.display = 'none'
-    $quizContainer.style.display = 'block'
-    loadQuestion()
-  }, 3500)
+  loadQuestion()
 }
 
 function loadQuestion() {
   clearTimeout(timeoutId)
-
-  const categoryQuestions = questions.filter(
-    (q) => q.category === selectedCategory,
-  )
-  const randomQuestionIndex = Math.floor(
-    Math.random() * categoryQuestions.length,
-  )
-  const currentQuestion = categoryQuestions[randomQuestionIndex]
-
-  if (!currentQuestion) {
-    showFinalScore()
-    return
-  }
+  const currentQuestion = questions[currentQuestionIndex]
 
   $questionElement.textContent = currentQuestion.question
   $answersElement.innerHTML = ''
@@ -70,15 +32,14 @@ function loadQuestion() {
     $button.textContent = option
     $button.classList.add('answer-btn')
 
-    $button.addEventListener('click', () =>
-      checkAnswer(option, currentQuestion.answer),
-    )
+    $button.addEventListener('click', () => checkAnswer(option))
     $answersElement.appendChild($button)
   })
 }
 
-function checkAnswer(selectAnswer, correctAnswer) {
+function checkAnswer(selectAnswer) {
   clearTimeout(timeoutId)
+  const correctAnswer = questions[currentQuestionIndex].answer
   const $buttons = document.querySelectorAll('.answer-btn')
 
   $buttons.forEach((btn) => {
@@ -101,12 +62,17 @@ function checkAnswer(selectAnswer, correctAnswer) {
 
   $scoreElement.textContent = `Score: ${score}`
 
-  timeoutId = setTimeout(loadQuestion, 600)
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++
+    timeoutId = setTimeout(loadQuestion, 600)
+  } else {
+    timeoutId = setTimeout(showFinalScore, 600)
+  }
 }
 
 function showFinalScore() {
   clearTimeout(timeoutId)
-  $quizContainer.style.display = 'none'
+  document.querySelector('.quiz-container').style.display = 'none'
   $scoreElement.style.display = 'none'
 
   const $finalScoreElement = document.querySelector('.finalScore')
