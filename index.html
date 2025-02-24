@@ -1,37 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia Master</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="container">
       <h1>Trivia Master</h1>
-      <button type="button" class="start-btn">Start Quiz</button>
-
-      <div class="wheel-container">
-        <div class="pointer"></div>
-        <div class="wheel">
-          <div class="category">Geography</div>
-          <div class="category">History</div>
-          <div class="category">Science</div>
-          <div class="category">Food</div>
-          <div class="category">Art</div>
-        </div>
-        <button class="spin-btn">Spin the Wheel</button>
-      </div>
-
+      <button type="button" class="start-btn">
+        Start Quiz
+      </button>
       <div class="quiz-container">
-        <p class="question">Loading question...</p>
+        <p class="question">Loanding question...</p>
         <div class="answers"></div>
       </div>
-
       <p class="score"></p>
       <p class="finalScore"></p>
     </div>
-
+    
     <script type="module" src="./script.js"></script>
   </body>
 </html>
